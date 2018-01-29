@@ -57,7 +57,7 @@ int main()
 	i=0;
 	while(i< (pno-mno)){
 		
-		out=rand()%5;
+		out=rand()%mno;
 		status[out]=0;
 		
 		cout<<"\n"<<"deallocation of block no."<<out+1<<"\n\n";
