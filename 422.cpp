@@ -251,8 +251,8 @@ void fifo()
 
 void lru()
 {
-	int mno,pages,i,list[10],status[10],j,allocation[10],time[10],check,status2[10],k;
-	
+	int mno,pages,i,status[10],j,time[10],check,status2[10],k;
+	char list[10],allocation[10];
 	cout<<"Enter number of memory block:";
 	cin>>mno;
 	cout<<endl;
