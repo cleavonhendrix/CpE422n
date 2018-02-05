@@ -95,6 +95,10 @@ void firstfit()
     cout<<"\nEnter size of each process: ";
     for(i = 0; i < pno; i++){
         cin>>psize[i];
+	     if(psize[i]>1000){
+        	cout<<endl<<"enter sizes less than 1000!"<<endl;
+        	i--;
+		}
     }
     
     for(i = 0; i < 10; i++)
