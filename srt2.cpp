@@ -41,7 +41,7 @@ int tgant[max1];
 int tex=0;
 int j,k,count,c,a;
 int trem[max1];
-char status[max1];
+
 cout<<"\nEnter no. of processes  : ";
 cin>>np;
 for(i=0;i<np;i++)
