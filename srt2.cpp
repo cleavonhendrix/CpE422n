@@ -41,6 +41,7 @@ int tgant[max1];
 int tex=0;
 int j,k,count,c,a;
 int trem[max1];
+char status[max1];
 cout<<"\nEnter no. of processes  : ";
 cin>>np;
 for(i=0;i<np;i++)
@@ -102,60 +103,26 @@ c--;
 }
 }
 sort(0,arr,p1,trem,np);
-for(i=0;i<np;i++)
-{
-wt[i]=0;
-tat[i]=0;
-resp[i]=-1;
-}
-for(i=0;i<c;i++)
-{
-for(j=0;j<np;j++)
-{
-if(pgant[i]==p1[j])
-{
-wt[j]=wt[j]+tgant[i]-tat[j];
-if(resp[j]==-1)
-resp[j]=tgant[i];
-tat[j]=tgant[i+1] ;
-break;
-}
-}
-}
-for(i=0;i<np;i++)
-{
-wt[i]=wt[i]-arr[i];
-tat[i]=tat[i]-arr[i];
-resp[i]=resp[i]-arr[i];
-rdelay[i]=(float)tat[i]/t1[i];
-}
-atat=0;  awt=0;  aresp=0;  ardelay=0;
-for(i=0;i<np;i++)
-{
-atat=atat+tat[i];
-awt=awt+wt[i];
-aresp=aresp+resp[i];
-ardelay=ardelay+rdelay[i];
-}
-atat=atat/np;
-awt=awt/np;
-aresp=aresp/np;
-ardelay=ardelay/np;
+
 
 cout<<"\nGANTT CHART:- "<<endl;
 
-cout<<"process\t\tstart\tend"<<endl;
-for(i=0;i<c;i++)
-cout<<"   P"<<pgant[i]<<"\t\t"<<tgant[i]<<"\t"<<tgant[i+1]<<endl;
 
-/*cout<<endl<<"\t   ";
-for(i=0;i<=c;i++)
-cout<<"    "<<tgant[i];*/
+for(i=0;i<c;i++){
+	cout<<endl<<"process\t\tstart\tend"<<endl;
+	for(j=0;j<c;j++){
+		if(i>=j){
+			cout<<"   P"<<pgant[j]<<"\t\t"<<tgant[j]<<"\t"<<tgant[j+1]<<endl;
+		}
+		else{
+			cout<<"   P --"<<"\t\t"<<"--"<<"\t"<<"--"<<endl;
+		}
+	}
+	
 
-cout<<"\n\nAverage waiting time      : "<<awt;
-cout<<"\nAverage turn arround time : "<<atat;
-cout<<"\nAverage response time     : "<<aresp;
-cout<<"\nAverage relative delay    : "<<ardelay;
+}
+
+
 getch();
 }
 
